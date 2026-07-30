@@ -13,6 +13,11 @@ from PIL import Image
 import pandas as pd
 import numpy as np
 
+st.set_page_config(layout="wide")
+st.title("AI RESUME GENERATOR")
+st.write("""This app helps user to build customized Professional Resume with latest Job apply links""")
+
+st.image("poster.png")
 #============API KEYS====================
 # Step 3: API Keys
 TAVILY_API_KEY = "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"
@@ -25,8 +30,8 @@ model = ChatGoogleGenerativeAI(
     google_api_key = GOOGLE_API_KEY
 )
 
-response = model.invoke("Hello Buddy!")
-response.content[-1]['text']
+# response = model.invoke("Hello Buddy!")
+# response.content[-1]['text']
 
 #============
 def search_latest_news_jobs(query):
@@ -44,7 +49,7 @@ agent = create_agent(
     model = model,
     tools = [search_latest_news_jobs])
 
-agent
+# agent
 
 
 def main_agent (agent, query) :
@@ -119,5 +124,5 @@ Show atleast Top 10-20 results with direct apply link"""
   return code
 
 
-  code = get_jobs(agent)
-display(HTML(code))
+# code = get_jobs(agent)
+# display(HTML(code))
