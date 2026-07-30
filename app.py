@@ -18,7 +18,7 @@ st.write("""This app helps user to build customized Professional Resume with lat
 
 st.image("poster.png.jpeg")
 
-st.sidebat.title("Fill Important Details")
+st.sidebar.title("Fill Important Details")
 st.sidebar.image("poster.png.jpeg")
 #============API KEYS====================
 # Step 3: API Keys
