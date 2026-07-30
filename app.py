@@ -97,10 +97,10 @@ user details: {query}"""
   return code
 
 
-  from IPython.display import display, HTML
+#   from IPython.display import display, HTML
 
-code = main_agent(agent, "PURVANSH CHAUHAN, GEN AI EXPERT")
-display(HTML(code))
+# code = main_agent(agent, "PURVANSH CHAUHAN, GEN AI EXPERT")
+# display(HTML(code))
 
 
 def get_jobs(agent):
