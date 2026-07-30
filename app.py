@@ -16,7 +16,7 @@ st.set_page_config(layout="wide")
 st.title("AI RESUME GENERATOR")
 st.write("""This app helps user to build customized Professional Resume with latest Job apply links""")
 
-st.image("poster.png")
+st.image("poster.png.jpeg")
 #============API KEYS====================
 # Step 3: API Keys
 TAVILY_API_KEY = "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"
