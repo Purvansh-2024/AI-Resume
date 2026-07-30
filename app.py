@@ -22,9 +22,9 @@ st.sidebar.title("Fill Important Details")
 st.sidebar.image("poster.png.jpeg")
 #============API KEYS====================
 # Step 3: API Keys
-TAVILY_API_KEY = "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"
-GROQ_API_KEY = "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"
-GOOGLE_API_KEY = "AQ.Ab8RN6L4717JBSwstJQ2qVsxsrQGihsMXlrz8bsGz-eeHNO0cw"
+TAVILY_API_KEY = st.sidebar.text_input("Tavily-API",type = "password")
+GROQ_API_KEY = st.sidebar.text_input("Groq-API",type = "password")
+GOOGLE_API_KEY = st.sidebar.text_input("Gemini-API",type = "password")
 
 
 model = ChatGoogleGenerativeAI(
