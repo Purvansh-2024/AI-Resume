@@ -156,3 +156,15 @@ Show atleast Top 10-20 results with direct apply link"""
 
 # code = get_jobs(agent)
 # display(HTML(code))
+
+
+if st.button("Generate Resume"):
+           with st.spinner("Agent Running"):
+                      code = main_agent(agent,user_info)
+                      st.html(code ,width="stretch",
+                              unsafe_allow_javascript=True)
+                      st.divider()  # to give horizontal div
+                      job_code = get_jobs(agent,loaction,profile)
+                      st.html(job_code , width="stretch",
+                              unsafe_allow_javascript=True)
+                      
