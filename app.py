@@ -16,10 +16,10 @@ st.set_page_config(layout="wide")
 st.title("AI RESUME GENERATOR")
 st.write("""This app helps user to build customized Professional Resume with latest Job apply links""")
 
-st.image("poster.png.jpeg")
+st.image("https://raw.githubusercontent.com/Purvansh-2024/AI-Resume/refs/heads/main/poster.png.jpeg")
 
 st.sidebar.title("Fill Important Details")
-st.sidebar.image("poster.png.jpeg")
+st.sidebar.image("https://raw.githubusercontent.com/Purvansh-2024/AI-Resume/refs/heads/main/poster.png.jpeg")
 #============API KEYS====================
 # Step 3: API Keys
 TAVILY_API_KEY = st.sidebar.text_input("Tavily-API",type = "password")
