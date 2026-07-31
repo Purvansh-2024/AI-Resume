@@ -163,16 +163,16 @@ def get_jobs(agent,
 
 
 # code = get_jobs(agent)
-# display(HTML(code))
+# DISPLAY.HTML(code)
 
 
 if st.button("Generate Resume"):
            with st.spinner("Agent Running"):
                       code = main_agent(agent,user_info)
-                      st.html(code ,width="stretch" ,
+                      st.html(code , width="stretch" , 
                               unsafe_allow_javascript=True)
                       st.divider()  # to give horizontal div
-                      job_code = get_jobs(agent,loaction,profile)
-                      st.html(job_code , width="stretch" ,
+                      job_code = get_jobs(agent,location,profile)
+                      st.html(job_code , width="stretch" , 
                               unsafe_allow_javascript=True)
                       
