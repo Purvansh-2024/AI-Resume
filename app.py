@@ -35,9 +35,9 @@ elif all(all_API):
     st.success("API KEYS LOADED SUCCESSFULLY")
     #==================MODEL================
     model = ChatGoogleGenerativeAI(
-    model = 'gemini-3.5-flash-lite',
-    google_api_key = GOOGLE_API_KEY
-)
+               model = 'gemini-3.5-flash-lite',
+               google_api_key = GOOGLE_API_KEY
+    )
 else:
     st.info("PASS ALL API-KEYS")
 
