@@ -80,7 +80,7 @@ def search_latest_news_jobs(query):
   response = client.search(query)
   return response
 
-#=============AGENT CREATION==============
+
   # Agent Creation
 agent = create_agent(
     model = model,
@@ -95,19 +95,18 @@ def main_agent (agent, query) :
 
   # Giving prompt to create detailed prompt
   # for code generation
-
   prompt = """You are AI assistant and
-below given is a prompt, your
-task is to give detailed prompt for
-this.
-You are a professional Resume generator
-where user will give their personal info,
-you have to create detailed Resume
-for students or professional one,
-it must be with dynamic UI and UX and,
-with advanced CSS Professional Designing
-Make sure to give output in HTML format only
-no markdowns allowed
+  below given is a prompt, your
+  task is to give detailed prompt for
+  this.
+  You are a professional Resume generator
+  where user will give their personal info,
+  you have to create detailed Resume
+  for students or professional one,
+  it must be with dynamic UI and UX and,
+  with advanced CSS Professional Designing
+  Make sure to give output in HTML format only
+  no markdowns allowed
   """
 
   response = agent. invoke({'messages':[{'role': 'user','content': prompt}]})
@@ -120,9 +119,9 @@ no markdowns allowed
     f.write(detailed_prompt)
 
   user_details = f"""Below Given is a user details
-generate Resume based on that, if not
-given keep: Default Resume: Python Developer
-user details: {query}"""
+  generate Resume based on that, if not
+  given keep: Default Resume: Python Developer
+  user details: {query}"""
 
   final_prompt = prompt + detailed_prompt + user_details
 
@@ -135,24 +134,26 @@ user details: {query}"""
   return code
 
 
-#   from IPython.display import display, HTML
-
+# from IPython.display import display, HTML
 # code = main_agent(agent, "PURVANSH CHAUHAN, GEN AI EXPERT")
 # display(HTML(code))
 
 
-def get_jobs(agent):
-  """Fetches latest domain-related jobs using Tavily and returns HTML code."""
+def get_jobs(agent,
+             Location,
+             Profile):
+  Location = "Noida,Delhi"
+  Profile = "Data Analysts, AI Engineer"
 
-  prompt = """Based on user given job profile,
-fetch latest jobs or job apply article
-using Naukri, Linkedin, indeed, or all popular
-Job apply platforms, Show Results with
-JOB PROFILE NAME, LOCATION, SALARY, COMPANY NAME,
-SHOW jobs only related to given
-{Location} and {Profile}, output must be in
-Professional HTML Naukri theme cards with Dynamic Design,
-Show atleast Top 10-20 results with direct apply link"""
+  prompt = f"""Based on user given job profile,
+  fetch latest jobs or job apply article
+  using Naukri, Linkedin, indeed, or all popular
+  Job apply platforms, Show Results with
+  JOB PROFILE NAME, LOCATION, SALARY, COMPANY NAME,
+  SHOW jobs only related to given
+  {Location} and {Profile}, output must be in
+  Professional HTML Naukri theme cards with Dynamic Design,
+  Show atleast Top 10-20 results with direct apply link"""
 
   response = agent. invoke({'messages':[{'role': 'user',
                                          'content': prompt}]})
@@ -168,10 +169,10 @@ Show atleast Top 10-20 results with direct apply link"""
 if st.button("Generate Resume"):
            with st.spinner("Agent Running"):
                       code = main_agent(agent,user_info)
-                      st.html(code ,width="stretch",
+                      st.html(code ,width="stretch" ,
                               unsafe_allow_javascript=True)
                       st.divider()  # to give horizontal div
                       job_code = get_jobs(agent,loaction,profile)
-                      st.html(job_code , width="stretch",
+                      st.html(job_code , width="stretch" ,
                               unsafe_allow_javascript=True)
                       
