@@ -12,14 +12,21 @@ from PIL import Image
 import pandas as pd
 import numpy as np
 
+# To Show web-app: complete page layout
 st.set_page_config(layout="wide")
+
+# To Give Title
 st.title("AI RESUME GENERATOR")
-st.write("""This app helps user to build customized Professional Resume with latest Job apply links""")
+
+st.write("""This app helps user to build customized Professional
+Resume with latest Job apply links""")
 
 st.image("https://raw.githubusercontent.com/Purvansh-2024/AI-Resume/refs/heads/main/poster.png.jpeg")
 
 st.sidebar.title("Fill Important Details")
 st.sidebar.image("https://raw.githubusercontent.com/Purvansh-2024/AI-Resume/refs/heads/main/poster.png.jpeg")
+
+
 #============API KEYS====================
 # Step 3: API Keys
 TAVILY_API_KEY = st.sidebar.text_input("Tavily-API",type = "password")
@@ -48,6 +55,7 @@ options = ["Delhi","Mumbai",
            "Gurugram/Gurgaon"]
 location = st.sidebar.multiselect("Select Location",
                                   options = options)
+
 profile_op = ["Data Analysts","AI Engineer",
               "Gen AI Developer","Full-Stack Dev",
               "Data Scientist"]
@@ -62,7 +70,7 @@ user_info = st.text_area("""Write you Resume Description: """)
 # response = model.invoke("Hello Buddy!")
 # response.content[-1]['text']
 
-#============
+#==============TOOLS===================
 def search_latest_news_jobs(query):
   """This function helps to fetch latest
    news or jobs related article using tavily"""
